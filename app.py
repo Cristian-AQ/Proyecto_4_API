@@ -8,13 +8,10 @@ import os #para abrir archivos
 
 app = FastAPI()
 
-origins = [
-    "https://localhost:8000",
-]
-
 app.add_middleware(
     CORSMiddleware,
-    allow_origins = origins,
+    allow_origins = ["*"],#muy necesario
+    allow_credentials = True,
     allow_methods = ["*"],
     allow_headers = ["*"],
 )
